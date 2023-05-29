@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "CajasDinamicas";
+}
+
+
+<h2>Cajas dinamicas</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="/" method="post">
+                <label>Numero de Cajas Dinamicas</label>
+                <input type="text" name="NumEntrada" value="0" />
+                <br />
+                <input type="submit" name="name" value="Generar" />
+            </form>
+        </div>
+        <div class="col-lg-6">
+            @if (ViewBag.Numero > 0)
+            {
+                <form action="/Pruebas/Resultado" method="post">
+                    @for (int i = 0; i < ViewBag.Numero; i++)
+                    {
+                        <input type="number" name="numero" /><br />
+                    }
+                    <input type="submit" name="name" value="Calcular" />
+                </form>
+            }
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+
+
+            @if (ViewBag.Sum != null)
+            {
+                <h2>Resultado</h2>
+               
+                <h3>Suma de los números ingresados: @ViewBag.Sum</h3>
+
+                
+                <ul>
+                    @if (ViewBag.Frecuencia != null)
+                    {
+                        <h3>Los números repetidos son:</h3>
+                        <ul>
+                            @foreach (var num in ViewBag.Frecuencia)
+                            {
+                                if (num.Value > 1)
+                                {
+                                    <li>Número: @num.Key, Repeticiones: @num.Value</li>
+                                }
+                            }
+                        </ul>
+                    }
+                </ul>
+
+                         }
+
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,39 @@
+﻿@model Practica1._1.Models.Calculos
+
+@{
+    ViewBag.Title = "OperasBas2";
+}
+
+<h2>OperasBas2</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="/" method="post">
+                <label>Numero 1</label>
+                <input type="text" name="Num1" value="" />
+                <br />
+                <label>Numero 2</label>
+                <input type="text" name="Num2" value="" />
+                <br />
+                <input type="submit" name="name" value="Calcular" />
+                <group>
+
+                </group>
+                <label>Suma</label>
+                <input type="radio" name="opc" value="suma" />
+                <label>Resta</label>
+                <input type="radio" name="opc" value="resta" />
+                <label>Multiplicacion</label>
+                <input type="radio" name="opc" value="multi" />
+                <label>Division</label>
+                <input type="radio" name="opc" value="div" />
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <h1>La suma es:@ViewBag.Res</h1>
+            <h1>La suma es:@Html.DisplayFor(model=>model.Res)</h1>
+        </div>
+    </div>
+</div>
+

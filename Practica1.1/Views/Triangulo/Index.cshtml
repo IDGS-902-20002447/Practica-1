@@ -1,0 +1,114 @@
+﻿@model Practica1._1.Models.Triangulo
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "Triangulo"))
+{
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.ax, htmlAttributes:
+     new { @class = "control-label col-md-2" })
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ax, new
+            {
+                htmlAttributes =
+           new { @class = "form-control" }
+            })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ay, htmlAttributes:
+     new { @class = "control-label col-md-2" })
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ay, new
+            {
+                htmlAttributes =
+           new { @class = "form-control" }
+            })
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.bx, htmlAttributes:
+     new { @class = "control-label col-md-2" })
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.bx, new
+            {
+                htmlAttributes =
+           new { @class = "form-control" }
+            })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.by, htmlAttributes:
+     new { @class = "control-label col-md-2" })
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.by, new
+            {
+                htmlAttributes =
+           new { @class = "form-control" }
+            })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.cx, htmlAttributes:
+     new { @class = "control-label col-md-2" })
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.cx, new
+            {
+                htmlAttributes =
+           new { @class = "form-control" }
+            })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.cy, htmlAttributes:
+     new { @class = "control-label col-md-2" })
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.cy, new
+            {
+                htmlAttributes =
+           new { @class = "form-control" }
+            })
+        </div>
+    </div>
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" name="name" value="Calcular" class="btn btn-dark" />
+    </div>
+
+    <h2>
+    </h2>
+}
+
+@if (ViewBag.Respuesta != null)
+{
+    <h2>
+        @if (ViewBag.Respuesta == true)
+        {
+            <h2>
+                Resultado:
+                Si es un triángulo.<br />
+                @ViewBag.Tipo<br />
+                @ViewBag.Area<br />
+                @ViewBag.Perimetro<br />
+            </h2>
+        }
+        else if (ViewBag.Respuesta == false)
+        {
+            <h2>
+                Resultado:
+                No es un triángulo
+            </h2>
+        }
+    </h2>
+}

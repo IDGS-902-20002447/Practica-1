@@ -1,0 +1,35 @@
+﻿@model Practica1._1.Models.Distancia
+
+@{
+    ViewBag.Title = "Distancia";
+}
+
+<h2>Distancia</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="/" method="post">
+                <label>X 1</label>
+                <input type="text" name="x2" value="" />
+                <br />
+                <label>X 2</label>
+                <input type="text" name="x1" value="" />
+                <br />
+                <label>Y 1</label>
+                <input type="text" name="y2" value="" />
+                <br />
+                <label>Y 2</label>
+                <input type="text" name="y1" value="" />
+                <br />
+                <input type="submit" name="name" value="Calcular" />
+
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <h1>La distancia es:@Html.DisplayFor(model => model.ResDistancia)</h1>
+
+        </div>
+    </div>
+</div>
+

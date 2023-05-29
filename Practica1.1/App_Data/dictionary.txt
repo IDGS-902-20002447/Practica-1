@@ -1,0 +1,6 @@
+hijo,son
+telefono,Phone
+ropa,clothes
+lugar,place
+botella,bottle
+pelota,ball
